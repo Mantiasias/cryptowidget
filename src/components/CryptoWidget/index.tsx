@@ -118,7 +118,8 @@ const gridOptions: GridOptions = {
                 return {
                     color: '#1E2026'
                 };
-            }
+            },
+            cellRenderer: 'agAnimateShowChangeCellRenderer'
         },
         {
             headerName: "Change",
@@ -161,7 +162,8 @@ const gridOptions: GridOptions = {
                 return {
                     textAlign: 'right'
                 };
-            }
+            },
+            cellRenderer: 'agAnimateShowChangeCellRenderer'
         }
     ],
     defaultColDef: {

@@ -1,18 +1,24 @@
 {
   "name": "cryptowidget",
-  "license": "MIT",
+  "author": "Matvey Vorontsov <matvey.vorontsov@gmail.com>",
   "version": "0.1.0",
   "private": true,
+  "license": "UNLICENSED",
   "dependencies": {
+    "@testing-library/dom": "^7.2.2",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "@types/jest": "^25.2.1",
+    "ag-grid-community": "latest",
+    "ag-grid-react": "^23.1.0",
+    "lodash": "^4.17.15",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
-    "ts-jest": "^25.4.0",
-    "typescript": "^3.8.3"
+    "ts-jest": "^24.3.0",
+    "typescript": "^3.8.3",
+    "websocket": "^1.0.31"
   },
   "scripts": {
     "start": "react-scripts start",

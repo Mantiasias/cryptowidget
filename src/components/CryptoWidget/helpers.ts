@@ -30,7 +30,7 @@ export function getChangeValue(nodeData: ProductItem): number {
     return +(res * 100).toFixed(2);
 }
 
-export const updateFavoritesLocalstorage = (productPairKey: string): void => {
+export const updateFavoritesLocalstorage = async (productPairKey: string): Promise<void> => {
     const favorites = JSON.parse(localStorage.getItem(LOCALSTORAGE_FAVORITE_KEY)) || [];
     const newState = favorites.includes(productPairKey)
         ? favorites.filter(val => val !== productPairKey)

@@ -108,4 +108,12 @@ export const gridOptions: GridOptions = {
             updateFavoritesLocalstorage(event.data.s);
         }
     },
+    onModelUpdated(event) {
+        if(event.api.getDisplayedRowCount() === 0) {
+            this.api.showNoRowsOverlay();
+        }
+        if(event.api.getDisplayedRowCount() > 0) {
+            this.api.hideOverlay();
+        }
+    }
 };

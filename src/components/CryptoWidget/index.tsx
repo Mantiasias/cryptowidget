@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {ProductItem} from "../../services/ProductService/types";
 import {AgGridReact} from 'ag-grid-react';
 
@@ -41,7 +41,7 @@ function onWsUpdate(data) {
         }
     });
 
-    gridOptions.api.applyTransaction({update: dataToUpdate});
+    gridOptions.api.applyTransactionAsync({update: dataToUpdate});
 
 }
 
@@ -88,10 +88,10 @@ function CryptoWidget({list, categoriesList}: Props) {
         wsClient.setMessageHandler(onWsUpdate);
     }, []);
 
-    const singleFilterCallback = useCallback((category) => {
+    const singleFilterCallback = category => {
         setActiveFilterButton(category);
         externalSingleFilterChanged(category);
-    }, [activeFilterButton]);
+    };
 
     return (
         <div id="grid-wrapper" className="ag-theme-alpine" style={{height: '350px'}}>
@@ -108,10 +108,11 @@ function CryptoWidget({list, categoriesList}: Props) {
                     <div className="filter-column-wrapper">
                         {Object.keys(categoriesList).map(v => {
                             if (categoriesList[v].size > 1) {
-                                return
+                                return null;
                             }
                             return (
                                 <SingleCategoryFilterButton
+                                    key={v}
                                     category={v}
                                     filterCallback={singleFilterCallback}
                                     activeValue={activeFilterButton}

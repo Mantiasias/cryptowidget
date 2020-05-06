@@ -4,8 +4,6 @@ import CryptoWidget from "./components/CryptoWidget";
 import {ProductResponse} from "./services/ProductService/types";
 import ProductService from "./services/ProductService";
 
-import './app.scss';
-
 function App() {
     const [list, setList] = useState([]);
     const forceCloseWebsocket = function (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {

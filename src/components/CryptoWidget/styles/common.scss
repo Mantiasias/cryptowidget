@@ -31,6 +31,7 @@
 .ag-theme-alpine .ag-value-change-value-highlight {
     background-color: rgba(240, 185, 11, 0.5);
 }
+
 .filter-row {
     display: flex;
     margin: 4px 4px;
@@ -38,58 +39,14 @@
     align-content: center;
 }
 
-.search{
-    box-sizing: border-box;
-    display: inline-block;
+.search {
     margin: 0;
     min-width: 0;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
     position: relative;
     padding-top: 0;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
     width: 100px;
-}
-
-.search-icon {
-    box-sizing: border-box;
-    margin: 0;
-    min-width: 0;
-    color: #CACED3;
-    font-size: 24px;
-    fill: #CACED3;
-    width: 1em;
-    height: 1em;
-}
-
-.search-input {
-    box-sizing: border-box;
-    margin: 0;
-    min-width: 0;
-    width: 100%;
-    padding: 0;
-    outline: none;
-    border: none;
-    background-color: transparent;
-    color: #1E2026;
-    font-size: 14px;
-    height: 32px;
-}
-
-.search-input-divider {
-    box-sizing: border-box;
-    margin: 0;
-    min-width: 0;
-    width: 100%;
-    height: 1px;
-    position: absolute;
-    bottom: 0;
-    background-color: #EAECEF;
 }
 
 .align-right{
@@ -108,4 +65,54 @@
 .column-last-price {
     color: #1E2026;
 }
+
+.filter-column {
+    display: flex;
+    background-color: rgb(247, 247, 247);
+    flex-wrap: nowrap;
+    height: 30px;
+    padding: 4px;
+    width: 100%;
+    justify-content: space-between;
+
+    &-wrapper {
+        display: flex;
+        flex-wrap: nowrap;
+        background: none;
+
+        .category-button {
+            background-color: rgb(255, 255, 255);
+            cursor: pointer;
+            line-height: 100%;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgb(230, 230, 230);
+            border-image: initial;
+            padding: 4px 5px;
+            margin: 0 2px 0 0;
+            outline: 0;
+
+            &:focus, .active, &.active {
+                color: rgb(240, 185, 11);
+                border-color: rgb(243, 186, 47);
+
+                .category-button__text {
+                    color: rgb(240, 185, 11);
+                }
+            }
+
+            &__text {
+                font-size: 16px;
+                color: rgb(51, 51, 51);
+                border: none;
+            }
+        }
+    }
+
+}
+
 

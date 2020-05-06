@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="da63e27e-aa96-45ac-a072-3cdcf31f05de" name="Default Changelist" comment="init">
-      <change afterPath="$PROJECT_DIR$/src/components/CryptoWidget/cellRenderers/starCellRenderer/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CryptoWidget/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CryptoWidget/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CryptoWidget/styles/common.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/helpers/WebSocketClient/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/helpers/WebSocketClient/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/helpers/common.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/ProductService/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/ProductService/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="da63e27e-aa96-45ac-a072-3cdcf31f05de" name="Default Changelist" comment="added filter by categories(true style)">
+      <change afterPath="$PROJECT_DIR$/src/Containers/SingleCategoryFilterButton/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Containers/StarCellRenderer/index.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__tests__/App.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/__tests__/App.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SDK/RadioButton/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Containers/RadioButton/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SDK/RadioButton/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Containers/RadioButton/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SDK/SearchInput/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Containers/SearchInput/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SDK/SearchInput/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Containers/SearchInput/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CryptoWidget/cellRenderers/starCellRenderer/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Containers/StarCellRenderer/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CryptoWidget/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CryptoWidget/constants.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CryptoWidget/gridOptions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CryptoWidget/gridOptions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CryptoWidget/helpers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CryptoWidget/helpers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CryptoWidget/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CryptoWidget/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CryptoWidget/styles/common.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CryptoWidget/styles/common.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/icons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/icons.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,9 +30,11 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package.json" />
-        <option value="TypeScript File" />
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
+        <option value="SCSS File" />
       </list>
     </option>
   </component>
@@ -57,7 +59,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.16.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/helpers/WebSocketClient" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -75,11 +77,11 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Containers" />
       <recent name="$PROJECT_DIR$/src/components/CryptoWidget/styles" />
       <recent name="$PROJECT_DIR$/src/components/CryptoWidget" />
       <recent name="$PROJECT_DIR$/src/helpers/WebSocketClient" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/client" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -125,7 +127,7 @@
       <option name="presentableId" value="Default" />
       <updated>1588583719382</updated>
       <workItem from="1588583721743" duration="468000" />
-      <workItem from="1588584400897" duration="50433000" />
+      <workItem from="1588584400897" duration="77393000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1588587237566</created>
@@ -134,7 +136,56 @@
       <option name="project" value="LOCAL" />
       <updated>1588587237566</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="init commit&#10;remaining features&#10;1) e2e+unit tests&#10;2) websocket set handler on reconnect&#10;3) filters&#10;4) search&#10;5) grouping by markets&#10;6) grouping by favorites">
+      <created>1588720452954</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1588720452954</updated>
+    </task>
+    <task id="LOCAL-00003" summary="animate rows on change">
+      <created>1588720687619</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1588720687619</updated>
+    </task>
+    <task id="LOCAL-00004" summary="added reconnect with current callback">
+      <created>1588755078877</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1588755078877</updated>
+    </task>
+    <task id="LOCAL-00005" summary="styling &#10;added scss&#10;first filter row done">
+      <created>1588767155969</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1588767155969</updated>
+    </task>
+    <task id="LOCAL-00006" summary="styling &#10;added scss&#10;first filter row done">
+      <created>1588767279869</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1588767279869</updated>
+    </task>
+    <task id="LOCAL-00007" summary="added filter panel first try(ugly style)">
+      <created>1588793633351</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1588793633351</updated>
+    </task>
+    <task id="LOCAL-00008" summary="split cryptowidget into files">
+      <created>1588794288670</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1588794288670</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +212,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
-    <option name="LAST_COMMIT_MESSAGE" value="init" />
+    <MESSAGE value="init commit&#10;remaining features&#10;1) e2e+unit tests&#10;2) websocket set handler on reconnect&#10;3) filters&#10;4) search&#10;5) grouping by markets&#10;6) grouping by favorites" />
+    <MESSAGE value="animate rows on change" />
+    <MESSAGE value="added reconnect with current callback" />
+    <MESSAGE value="styling &#10;added scss&#10;first filter row done" />
+    <MESSAGE value="added filter panel first try(ugly style)" />
+    <MESSAGE value="split cryptowidget into files" />
+    <option name="LAST_COMMIT_MESSAGE" value="split cryptowidget into files" />
   </component>
 </project>

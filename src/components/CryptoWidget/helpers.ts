@@ -1,5 +1,5 @@
 import {ProductItem} from "../../services/ProductService/types";
-import {PRECISION} from "./constants";
+import {LOCALSTORAGE_FAVORITE_KEY, PRECISION} from "./constants";
 
 export function changeCellComparator(v1, v2, nodeA, nodeB): number {
     return getChangeValue(nodeA.data) - getChangeValue(nodeB.data);
@@ -29,8 +29,6 @@ export function getChangeValue(nodeData: ProductItem): number {
     const res = diff / +nodeData.c;
     return +(res * 100).toFixed(2);
 }
-
-const LOCALSTORAGE_FAVORITE_KEY = 'favorites';
 
 export const updateFavoritesLocalstorage = (productPairKey: string): void => {
     const favorites = JSON.parse(localStorage.getItem(LOCALSTORAGE_FAVORITE_KEY)) || [];

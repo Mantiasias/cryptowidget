@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import {ProductItem} from "../../services/ProductService/types";
 import {AgGridReact} from 'ag-grid-react';
 
@@ -8,13 +8,19 @@ import './styles/common.scss';
 
 import wsClient from "../../helpers/WebSocketClient";
 import {WEBSOCKET_URL} from "../../config";
-import RadioButton from "../../SDK/RadioButton";
-import SearchInput from "../../SDK/SearchInput";
+import RadioButton from "../../Containers/RadioButton";
+import SearchInput from "../../Containers/SearchInput";
 import {gridOptions} from "./gridOptions";
 import {COLUMN_KEYS} from "./constants";
+import SingleCategoryFilterButton from "../../Containers/SingleCategoryFilterButton";
+
+type CategoriesList = {
+    [key: string]: Set<string>;
+}
 
 type Props = {
-    list: ProductItem[]
+    list: ProductItem[],
+    categoriesList: CategoriesList
 }
 
 function onWsUpdate(data) {
@@ -50,48 +56,28 @@ function volumeChangeSwitched(value?: string): void {
     gridOptions.api.sizeColumnsToFit();
 }
 
-function externalFilterChanged(newValue) {
-    switch (newValue) {
-        case 'favorite': {
-            const fFilter = {
-                f: {
-                    type: 'equals',
-                    filter: 'true',
-                },
-            };
-            gridOptions.api.setFilterModel(fFilter);
-            gridOptions.api.onFilterChanged();
-            break;
-        }
-        case 'bnb': {
-            const bnbFilter = {
-                [COLUMN_KEYS.FAVORITE]: {
-                    type: 'endsWith',
-                    filter: 'BNB',
-                },
-            };
-            gridOptions.api.setFilterModel(bnbFilter);
-            gridOptions.api.onFilterChanged();
-            break;
-        }
-        case 'btc': {
-            const btcFilter = {
-                [COLUMN_KEYS.FAVORITE]: {
-                    type: 'endsWith',
-                    filter: 'BTC',
-                },
-            };
-            gridOptions.api.setFilterModel(btcFilter);
-            gridOptions.api.onFilterChanged();
-            break;
-        }
-        default: {
-            break;
-        }
+function externalSingleFilterChanged(newValue: string) {
+    let filterToApply;
+    if (newValue === 'favorite') {
+        filterToApply = {
+            f: {
+                type: 'equals',
+                filter: 'true',
+            },
+        };
+    } else {
+        filterToApply = {
+            [COLUMN_KEYS.FAVORITE]: {
+                type: 'endsWith',
+                filter: newValue.toUpperCase(),
+            },
+        };
     }
+    gridOptions.api.setFilterModel(filterToApply);
+    gridOptions.api.onFilterChanged();
 }
 
-function CryptoWidget({list}: Props) {
+function CryptoWidget({list, categoriesList}: Props) {
     const [activeFilterButton, setActiveFilterButton] = useState('');
 
     useEffect(() => {
@@ -102,8 +88,9 @@ function CryptoWidget({list}: Props) {
         wsClient.setMessageHandler(onWsUpdate);
     }, []);
 
-    useEffect(() => {
-        externalFilterChanged(activeFilterButton);
+    const singleFilterCallback = useCallback((category) => {
+        setActiveFilterButton(category);
+        externalSingleFilterChanged(category);
     }, [activeFilterButton]);
 
     return (
@@ -111,23 +98,26 @@ function CryptoWidget({list}: Props) {
             <div className="filter-row">
                 <div className="filter-column">
                     <div className="filter-column-wrapper">
-                        <button className="category-button" onClick={() => setActiveFilterButton('favorite')}>
-                            <i className={`iconfont icon-star ${activeFilterButton === 'favorite' ? 'active' : ''}`} />
-                        </button>
+                        <SingleCategoryFilterButton
+                            category={'favorite'}
+                            filterCallback={singleFilterCallback}
+                            activeValue={activeFilterButton}
+                            content={<i className={`iconfont icon-star`} />}
+                        />
                     </div>
                     <div className="filter-column-wrapper">
-                        <button
-                            className={`category-button ${activeFilterButton === 'bnb' ? 'active' : ''}`}
-                            onClick={() => setActiveFilterButton('bnb')}
-                        >
-                            BNB
-                        </button>
-                        <button
-                            className={`category-button ${activeFilterButton === 'btc' ? 'active' : ''}`}
-                            onClick={() => setActiveFilterButton('btc')}
-                        >
-                            BTC
-                        </button>
+                        {Object.keys(categoriesList).map(v => {
+                            if (categoriesList[v].size > 1) {
+                                return
+                            }
+                            return (
+                                <SingleCategoryFilterButton
+                                    category={v}
+                                    filterCallback={singleFilterCallback}
+                                    activeValue={activeFilterButton}
+                                />
+                            )
+                        })}
                     </div>
                 </div>
             </div>

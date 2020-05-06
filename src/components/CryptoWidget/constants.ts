@@ -7,3 +7,4 @@ export const COLUMN_KEYS = {
     VOLUME: 'VOLUME',
     LAST_PRICE: 'LAST_PRICE'
 };
+export const LOCALSTORAGE_FAVORITE_KEY = 'favorites';

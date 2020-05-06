@@ -1,5 +1,5 @@
 import {GridOptions} from "ag-grid-community";
-import StarCellRenderer from "./cellRenderers/starCellRenderer";
+import StarCellRenderer from "../../Containers/StarCellRenderer";
 import {COLUMN_KEYS, HEADER_HEIGHT, PRECISION, ROW_HEIGHT} from "./constants";
 import {CustomLoadingOverlay} from "./overlays/loading";
 import {CustomNoRowsOverlay} from "./overlays/noData";

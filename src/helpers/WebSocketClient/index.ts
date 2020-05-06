@@ -8,9 +8,13 @@ class WebSocketClient implements IWebSocketClient {
     private webSocketURL: string = null;
     private connection: W3CWebSocket = null;
 
-    public reconnect = debounce((wsUrl) => {
+    public reconnect = debounce((wsUrl, messageHandler) => {
         console.log('trying to reconnect to ', wsUrl);
-        return this.openWs(wsUrl);
+        const connectionResult = this.openWs(wsUrl);
+        if (messageHandler) {
+            this.setMessageHandler(messageHandler)
+        }
+        return connectionResult;
     }, WEBSOCKET_RECONNECTION_TIME);
 
     public async openWs(wsUrl: string): Promise<boolean> {
@@ -35,8 +39,9 @@ class WebSocketClient implements IWebSocketClient {
 
         this.connection.onclose = error => {
             console.log('ws close', error);
+            const messageHandler = this.connection.onmessage.bind({});
             this.connection = null;
-            this.reconnect(wsUrl);
+            this.reconnect(wsUrl, messageHandler);
         };
 
         this.connection.onerror = error => {

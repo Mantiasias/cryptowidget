@@ -76,7 +76,6 @@ export const gridOptions: GridOptions = {
         {
             headerName: "Volume",
             headerClass: 'align-right',
-            hide: true,
             field: 'v',
             colId: COLUMN_KEYS.VOLUME,
             valueFormatter: function (params) {

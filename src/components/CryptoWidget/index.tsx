@@ -51,8 +51,12 @@ function onFilterTextBoxChanged() {
 }
 
 function volumeChangeSwitched(value?: string): void {
-    gridOptions.columnApi.setColumnVisible(value, true);
-    gridOptions.columnApi.setColumnVisible(value === COLUMN_KEYS.CHANGE ? COLUMN_KEYS.VOLUME : COLUMN_KEYS.CHANGE, false);
+    if (!value) {
+        gridOptions.columnApi.setColumnsVisible([COLUMN_KEYS.CHANGE, COLUMN_KEYS.VOLUME], true);
+    } else {
+        gridOptions.columnApi.setColumnVisible(value, true);
+        gridOptions.columnApi.setColumnVisible(value === COLUMN_KEYS.CHANGE ? COLUMN_KEYS.VOLUME : COLUMN_KEYS.CHANGE, false);
+    }
     gridOptions.api.sizeColumnsToFit();
 }
 
@@ -139,6 +143,12 @@ function CryptoWidget({list, categoriesList}: Props) {
                         name="filter"
                         label="Volume"
                         onChange={() => volumeChangeSwitched(COLUMN_KEYS.VOLUME)}
+                    />
+                    <RadioButton
+                        id={'clear'}
+                        name="filter"
+                        label="Clear"
+                        onChange={() => volumeChangeSwitched()}
                     />
                 </div>
             </div>

@@ -4,6 +4,8 @@ import CryptoWidget from "./components/CryptoWidget";
 import {ProductResponse} from "./services/ProductService/types";
 import ProductService from "./services/ProductService";
 
+import './app.scss';
+
 function App() {
     const [list, setList] = useState([]);
     const forceCloseWebsocket = function (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
@@ -32,7 +34,7 @@ function App() {
                     Market
                 </span>
                 <button style={{border: '1px solid black'}} onClick={forceCloseWebsocket}>
-                    Click to Force Close WebSocket Connection
+                    Force Close Wss
                 </button>
             </div>
             <CryptoWidget list={list}/>

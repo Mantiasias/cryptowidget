@@ -4,10 +4,10 @@ function StarCellRenderer(): string | HTMLElement {
 
 StarCellRenderer.prototype.init = function (params) {
     this.eGui = document.createElement('span');
-    this.eGui.style = "display: flex; height: 100%;";
+    this.eGui.style = "display: inline-flex; height: 100%;";
     this.eGui.innerHTML = `
        <svg
-            width="14"
+            width="14px"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             style="margin-right: 4px"

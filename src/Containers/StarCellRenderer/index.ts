@@ -4,7 +4,7 @@ function StarCellRenderer(): string | HTMLElement {
     return
 }
 
-StarCellRenderer.prototype.init = function (params) {
+StarCellRenderer.prototype.init = function (params: { data: { favorite: boolean; b: string; q: string; }; }) {
     this.eGui = document.createElement('span');
     this.eGui.innerHTML = `
        <i class="custom iconfont ${params.data.favorite ? 'icon-star yellow' : 'icon-star-filled yellow'}" />

@@ -1,0 +1,1 @@
+export const CustomLoadingOverlay = `Loading`;

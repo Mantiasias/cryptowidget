@@ -6,14 +6,15 @@ type Props = {
     id: string;
     name: string;
     label: string;
-    onChange: (event) => void;
+    onChange: (value) => void;
+    checked: boolean
 };
 
 function RadioButton(props: Props) {
-    const {id, name, label, onChange} = props;
+    const {id, name, label, onChange, checked} = props;
     return (
         <div className="md-radio md-radio-inline">
-            <input id={id} type="radio" name={name} onChange={onChange} />
+            <input id={id} type="radio" name={name} onChange={() => onChange(id)} checked={checked} />
                 <label htmlFor={id}>
                     {label}
                 </label>

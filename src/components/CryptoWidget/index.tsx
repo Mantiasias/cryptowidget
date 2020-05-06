@@ -82,7 +82,8 @@ function externalSingleFilterChanged(newValue: string) {
 }
 
 function CryptoWidget({list, categoriesList}: Props) {
-    const [activeFilterButton, setActiveFilterButton] = useState('');
+    const [activeFilterButton, setActiveFilterButton] = useState(Object.keys(categoriesList)[0]);
+    const [activeRadioButton, setActiveRadioButton] = useState(COLUMN_KEYS.CHANGE);
 
     useEffect(() => {
         wsClient.openWs(WEBSOCKET_URL).then(res => {
@@ -95,6 +96,11 @@ function CryptoWidget({list, categoriesList}: Props) {
     const singleFilterCallback = category => {
         setActiveFilterButton(category);
         externalSingleFilterChanged(category);
+    };
+
+    const singleRadioCallback = value => {
+        setActiveRadioButton(value);
+        volumeChangeSwitched(value);
     };
 
     return (
@@ -136,19 +142,15 @@ function CryptoWidget({list, categoriesList}: Props) {
                         id={COLUMN_KEYS.CHANGE}
                         name="filter"
                         label="Change"
-                        onChange={() => volumeChangeSwitched(COLUMN_KEYS.CHANGE)}
+                        checked={activeRadioButton === COLUMN_KEYS.CHANGE}
+                        onChange={singleRadioCallback}
                     />
                     <RadioButton
                         id={COLUMN_KEYS.VOLUME}
                         name="filter"
                         label="Volume"
-                        onChange={() => volumeChangeSwitched(COLUMN_KEYS.VOLUME)}
-                    />
-                    <RadioButton
-                        id={'clear'}
-                        name="filter"
-                        label="Clear"
-                        onChange={() => volumeChangeSwitched()}
+                        checked={activeRadioButton === COLUMN_KEYS.VOLUME}
+                        onChange={singleRadioCallback}
                     />
                 </div>
             </div>

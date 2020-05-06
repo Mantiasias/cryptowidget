@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da63e27e-aa96-45ac-a072-3cdcf31f05de" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/CryptoWidget/gridOptions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CryptoWidget/gridOptions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Containers/RadioButton/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Containers/RadioButton/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CryptoWidget/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CryptoWidget/index.tsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -111,7 +113,7 @@
       <option name="presentableId" value="Default" />
       <updated>1588583719382</updated>
       <workItem from="1588583721743" duration="468000" />
-      <workItem from="1588584400897" duration="78907000" />
+      <workItem from="1588584400897" duration="79492000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1588587237566</created>
@@ -190,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588801752303</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="added clear filters button">
+      <created>1588802075038</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1588802075038</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,6 +236,7 @@
     <MESSAGE value="added filter by categories(fixed code style and generics)&#10;&#10;remaining: &#10;1) multiple filter categories&#10;2) tests&#10;3) sorting arrows" />
     <MESSAGE value="some types" />
     <MESSAGE value="no rows overlay on no records" />
-    <option name="LAST_COMMIT_MESSAGE" value="no rows overlay on no records" />
+    <MESSAGE value="added clear filters button" />
+    <option name="LAST_COMMIT_MESSAGE" value="added clear filters button" />
   </component>
 </project>

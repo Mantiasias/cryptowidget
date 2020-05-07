@@ -1,16 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="da63e27e-aa96-45ac-a072-3cdcf31f05de" name="Default Changelist" comment="added">
-      <change afterPath="$PROJECT_DIR$/src/Containers/MultipleCategoryFilterButton/SubCategoryListItem.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Containers/MultipleCategoryFilterButton/index.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Containers/MultipleCategoryFilterButton/index.tsx" afterDir="false" />
+    <list default="true" id="da63e27e-aa96-45ac-a072-3cdcf31f05de" name="Default Changelist" comment="fix star selection">
+      <change afterPath="$PROJECT_DIR$/cypress.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/fixtures/productList.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/integration/application/components/Cryptowidget/app.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/integration/application/components/Cryptowidget/searchInput.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/plugins/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/support/commands.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/support/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CryptoWidget/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CryptoWidget/constants.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cypress/integration/application/components/Cryptowidget/index.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Containers/SearchInput/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Containers/SearchInput/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CryptoWidget/gridOptions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CryptoWidget/gridOptions.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CryptoWidget/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CryptoWidget/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,11 +96,6 @@
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/Containers" />
-      <recent name="$PROJECT_DIR$/src/helpers/WebSocketClient" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Containers" />
       <recent name="$PROJECT_DIR$/src/components/CryptoWidget/styles" />
@@ -74,18 +103,11 @@
       <recent name="$PROJECT_DIR$/src/helpers/WebSocketClient" />
       <recent name="$PROJECT_DIR$" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Containers" />
+      <recent name="$PROJECT_DIR$/src/helpers/WebSocketClient" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="renders learn react link" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
@@ -229,12 +251,23 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="COLUMN_ORDER" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
             </State>
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
@@ -250,6 +283,37 @@
     <MESSAGE value="no rows overlay on no records" />
     <MESSAGE value="added clear filters button" />
     <MESSAGE value="added radio state value" />
-    <option name="LAST_COMMIT_MESSAGE" value="added radio state value" />
+    <MESSAGE value="fix star selection" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix star selection" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="546" y="194" key="CommitChangelistDialog2" timestamp="1588866310833">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="546" y="194" key="CommitChangelistDialog2/0.0.1920.1200@0.0.1920.1200" timestamp="1588866310833" />
+    <state x="192" y="109" key="DiffContextDialog" timestamp="1588866305233">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="192" y="109" key="DiffContextDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1588866305233" />
+    <state x="805" y="530" key="Github.Dialog.Accounts.Choose" timestamp="1588865998392">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="805" y="530" key="Github.Dialog.Accounts.Choose/0.0.1920.1200@0.0.1920.1200" timestamp="1588865998392" />
+    <state x="707" y="309" key="RollbackChangesDialog" timestamp="1588865965884">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="707" y="309" key="RollbackChangesDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1588865965884" />
+    <state x="560" y="340" key="Vcs.Push.Dialog.v2" timestamp="1588866114748">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="560" y="340" key="Vcs.Push.Dialog.v2/0.0.1920.1200@0.0.1920.1200" timestamp="1588866114748" />
+    <state x="100" y="100" width="1720" height="1000" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1588865954996">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="100" y="100" width="1720" height="1000" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1588865954996" />
+    <state x="100" y="100" width="1720" height="1000" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1588865954997">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="100" y="100" width="1720" height="1000" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1588865954997" />
   </component>
 </project>

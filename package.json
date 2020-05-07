@@ -20,14 +20,15 @@
     "react-scripts": "3.4.1",
     "ts-jest": "^24.3.0",
     "typescript": "^3.8.3",
-    "websocket": "^1.0.31"
+    "websocket": "^1.0.31",
+    "whatwg-fetch": "^3.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "cypress:open": "cypress open"
+    "cy:open": "cypress open"
   },
   "eslintConfig": {
     "extends": "react-app"

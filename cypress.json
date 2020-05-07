@@ -1,0 +1,5 @@
+{
+  "projectId": "96i1jp",
+  "integrationFolder": "./cypress/integration/application",
+  "baseUrl": "http://localhost:3000"
+}

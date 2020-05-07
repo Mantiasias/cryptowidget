@@ -139,7 +139,7 @@ function CryptoWidget({list, categoriesList}: Props) {
                 <div className="filter-column">
                     <div className="filter-column-wrapper">
                         <SingleCategoryFilterButton
-                            category={'favorite'}
+                            category="favorite"
                             filterCallback={singleFilterCallback}
                             activeValue={activeFilterButton}
                             content={<i className={`iconfont icon-star`} />}

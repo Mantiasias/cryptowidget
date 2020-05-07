@@ -17,6 +17,7 @@ export const gridOptions: GridOptions = {
     columnDefs: [
         {
             field: 'f',
+            colId: COLUMN_KEYS.F,
             hide: true,
             valueGetter: function (params) {
                 return params.data.favorite;

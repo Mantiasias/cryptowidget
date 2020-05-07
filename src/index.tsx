@@ -4,6 +4,7 @@ import './index.scss';
 import './icons.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import 'whatwg-fetch';
 
 ReactDOM.render(
   <React.StrictMode>

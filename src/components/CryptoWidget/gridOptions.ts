@@ -23,6 +23,14 @@ export const gridOptions: GridOptions = {
             }
         },
         {
+            field: 'pm',
+            colId: COLUMN_KEYS.PM,
+            hide: true,
+            valueGetter: function (params) {
+                return params.data.pm;
+            }
+        },
+        {
             headerName: "Pair",
             field: 'favorite',
             colId: COLUMN_KEYS.FAVORITE,

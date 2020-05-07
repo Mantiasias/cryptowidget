@@ -13,6 +13,7 @@ import SearchInput from "../../Containers/SearchInput";
 import {gridOptions} from "./gridOptions";
 import {COLUMN_KEYS} from "./constants";
 import SingleCategoryFilterButton from "../../Containers/SingleCategoryFilterButton";
+import MultipleCategoryFilterButton from "../../Containers/MultipleCategoryFilterButton";
 
 type CategoriesList = {
     [key: string]: Set<string>;
@@ -42,7 +43,6 @@ function onWsUpdate(data) {
     });
 
     gridOptions.api.applyTransactionAsync({update: dataToUpdate});
-
 }
 
 function onFilterTextBoxChanged() {
@@ -64,7 +64,7 @@ function externalSingleFilterChanged(newValue: string) {
     let filterToApply;
     if (newValue === 'favorite') {
         filterToApply = {
-            f: {
+            [COLUMN_KEYS.F]: {
                 type: 'equals',
                 filter: 'true',
             },
@@ -75,6 +75,31 @@ function externalSingleFilterChanged(newValue: string) {
                 type: 'endsWith',
                 filter: newValue.toUpperCase(),
             },
+        };
+    }
+    gridOptions.api.setFilterModel(filterToApply);
+    gridOptions.api.onFilterChanged();
+}
+
+function externalMuplipleFilterChanged(category: string, parentCategory?: string) {
+    let filterToApply;
+    if (parentCategory) {
+        filterToApply = {
+            [COLUMN_KEYS.FAVORITE]: {
+                type: 'endsWith',
+                filter: category.toUpperCase()
+            },
+            [COLUMN_KEYS.PM]: {
+                type: 'equals',
+                filter: parentCategory.toUpperCase()
+            }
+        };
+    } else {
+        filterToApply = {
+            [COLUMN_KEYS.PM]: {
+                type: 'equals',
+                filter: category.toUpperCase()
+            }
         };
     }
     gridOptions.api.setFilterModel(filterToApply);
@@ -98,6 +123,11 @@ function CryptoWidget({list, categoriesList}: Props) {
         externalSingleFilterChanged(category);
     };
 
+    const multipleFilterCallback = (category, parentCategory) => {
+        externalMuplipleFilterChanged(category, parentCategory);
+        setActiveFilterButton(parentCategory ? parentCategory: category);
+    };
+
     const singleRadioCallback = value => {
         setActiveRadioButton(value);
         volumeChangeSwitched(value);
@@ -116,14 +146,22 @@ function CryptoWidget({list, categoriesList}: Props) {
                         />
                     </div>
                     <div className="filter-column-wrapper">
-                        {Object.keys(categoriesList).map(v => {
-                            if (categoriesList[v].size > 1) {
-                                return null;
+                        {Object.keys(categoriesList).map(categoryItem => {
+                            if (categoriesList[categoryItem].size > 1) {
+                                return (
+                                    <MultipleCategoryFilterButton
+                                        key={categoryItem}
+                                        category={categoryItem}
+                                        subcategoriesList={categoriesList[categoryItem]}
+                                        filterCallback={multipleFilterCallback}
+                                        activeCategory={activeFilterButton}
+                                    />
+                                );
                             }
                             return (
                                 <SingleCategoryFilterButton
-                                    key={v}
-                                    category={v}
+                                    key={categoryItem}
+                                    category={categoryItem}
                                     filterCallback={singleFilterCallback}
                                     activeValue={activeFilterButton}
                                 />

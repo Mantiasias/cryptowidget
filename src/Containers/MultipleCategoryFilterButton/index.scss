@@ -1,0 +1,139 @@
+.toggler {
+  position: relative;
+  border-left: none;
+  padding: 4px 3px;
+  outline-width: 0;
+  outline: none;
+  border: 0;
+  border-top: 1px solid #d8d8d8;
+  border-bottom: 1px solid #d8d8d8;
+  border-right: 1px solid #d8d8d8;
+  margin-right: 4px;
+
+  &-arrow {
+    display: inline-block;
+    cursor: pointer;
+    line-height: 100%;
+    font-size: 12px;
+    height: 100%;
+    background-color: white;
+    border-color: #e6e6e6;
+    border-image: initial;
+    margin: 0;
+    outline: 0;
+    position: relative;
+    border-left: none;
+    top: -1px;
+    transition: transform 0.3s ease 0s;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &-arrow.rotate {
+    transform: rotate(180deg);
+  }
+}
+
+.multiple-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  position: relative;
+
+  .iconfont {
+    font-size: 10px;
+    display: inline-block;
+    height: 10px;
+    text-align: center;
+    width: 10px;
+  }
+
+  .subcategory-button {
+    min-width: 39px;
+    display: inline-block;
+    user-select: none;
+    flex: 1 1;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #e6e6e6;
+    border-image: initial;
+    padding: 0;
+    flex-wrap: nowrap;
+    position: relative;
+    background-color: white;
+    &:focus {
+      outline: none
+    }
+  }
+
+  .subcategory-button.active {
+    color: rgb(240, 185, 11);
+    cursor: pointer;
+    line-height: 100%;
+    background-color: rgb(255, 249, 231);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(243, 186, 47);
+    border-image: initial;
+    outline: 0;
+  }
+
+  .subcat-list {
+    display: flex;
+    flex-basis: 100px;
+    flex-wrap: wrap;
+    max-width: 5.8em;
+    position: absolute;
+    right: 0;
+    top: 1.6em;
+    z-index: 200;
+    white-space: nowrap;
+    box-shadow: rgba(0, 0, 0, 0.35) 1px 1px 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-left: 1px solid rgb(230, 230, 230);
+    border-right: 1px solid rgb(230, 230, 230);
+    border-bottom: 1px solid rgb(230, 230, 230);
+
+    &__item {
+      color: rgb(51, 51, 51);
+      cursor: pointer;
+      display: flex;
+      width: 100%;
+      flex: 1 1 100%;
+
+
+      .li-button.active, .li-button:hover {
+        background-color: rgb(230, 230, 230);
+        color: rgb(240, 185, 11);
+      }
+
+      .li-button {
+        background-color: rgb(255, 255, 255);
+        color: rgb(51, 51, 51);
+        cursor: pointer;
+        text-align: left;
+        width: 100%;
+        border-width: 0;
+        padding: 0.5em;
+        flex: 0 0 100%;
+        outline: none;
+
+        &__minus {
+          display: inline-block;
+          height: 10px;
+          font-size: 10px;
+          text-align: center;
+          width: 10px;
+        }
+      }
+    }
+
+    &__item.active {
+      border-top: 1px solid rgb(230, 230, 230);
+    }
+  }
+
+}
